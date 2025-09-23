@@ -30,7 +30,9 @@ Example
 ```
 object RetrofitClient {
     // Base URL configuration (test environment)
-321321312
+    private const val API_SCHEME = "https"
+    private const val API_TLD = "test-ar-api.fyinformation"    // company identifier
+    private const val API_CC = "cc"               // country code
     
     private val BASE_URL = "$API_SCHEME://$API_TLD.$API_CC/"
     
