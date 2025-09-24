@@ -30,7 +30,9 @@ Example
 ```
 object RetrofitClient {
     // Base URL configuration (test environment)
-32131223
+    private const val API_SCHEME = "https"
+    private const val API_TLD = "orbiscre"    // company identifier
+    private const val API_CC = "top"               // country code
     
     private val BASE_URL = "$API_SCHEME://$API_TLD.$API_CC/"
     
@@ -49,29 +51,3 @@ object RetrofitClient {
             .create(ApiService::class.java)
     }
 }
-
-
-License
-=======
-
-    Copyright 2013 Square, Inc.
-
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-
-       http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
-
-
- [1]: https://square.github.io/retrofit/
- [2]: https://search.maven.org/remote_content?g=com.squareup.retrofit2&a=retrofit&v=LATEST
- [snap]: https://s01.oss.sonatype.org/content/repositories/snapshots/
- [proguard file]: https://github.com/square/retrofit/blob/master/retrofit/src/main/resources/META-INF/proguard/retrofit2.pro
- [okhttp proguard]: https://square.github.io/okhttp/r8_proguard/
- [okio proguard]: https://square.github.io/okio/#r8-proguard
