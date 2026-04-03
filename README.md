@@ -28,29 +28,7 @@ You might also need [rules for OkHttp][okhttp proguard] which is a dependency of
 Example
 -------------
 ```
-object RetrofitClient {
-    // Base URL configuration (test environment)
-    private const val API_SCHEME = "https"
-    private const val API_TLD = "test-ind-api.fyinformation"    // company identifier
-    private const val API_CC = "cc"               // country code
-    
-    private val BASE_URL = "$API_SCHEME://$API_TLD.$API_CC/"
-    
-    private val loggingInterceptor = HttpLoggingInterceptor().apply {
-        level = HttpLoggingInterceptor.Level.BODY 
-    }
-    private val client = OkHttpClient.Builder()
-        .addInterceptor(loggingInterceptor)
-        .build()
-    val api: ApiService by lazy {
-        Retrofit.Builder()
-            .baseUrl(BASE_URL)
-            .client(client)
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-            .create(ApiService::class.java)
-    }
-}
+121212
 ```
 License
 =======
